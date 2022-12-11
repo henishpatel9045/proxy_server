@@ -19,5 +19,5 @@ from proxy import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("bg/wp", views.wp_check, name="Proxy for bookmygame WP Webhook."),
+    path("bg/wp", views.WpCheck.as_view(), name="Proxy for bookmygame WP Webhook."),
 ]
