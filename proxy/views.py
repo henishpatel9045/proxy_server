@@ -23,7 +23,7 @@ class WpCheck(APIView):
     def post(self, request):
         print(type(request))
         data = request.data
-        url = "https://cc73-2402-8100-2682-a131-d939-fe9e-3011-8b12.in.ngrok.io"
+        url = "http://3.6.211.9:5100"
         url += "/wp/webhook"
         try:
             r = requests.post(url, json=data)
