@@ -13,12 +13,9 @@ class WpCheck(APIView):
         url = "http://3.6.211.9:5100"
         url += "/wp/webhook"
         url += "?hub.challenge="
-        try:
-            url += str(request.GET.get("hub.challenge"))
-            r = requests.get(url)
-            return Response(r.json(), status=200)
-        except Exception as e:
-            return Response(status=400)
+        url += str(request.GET.get("hub.challenge"))
+        r = requests.get(url)
+        return Response(r.json(), status=200)
 
 
     def post(self, request):
