@@ -11,6 +11,7 @@ class WpCheck(APIView):
         print(type(request))
         data = request.data
         url = "http://3.6.211.9:5100"
+        url += "/wp/webhook"
         url += "?hub.challenge="
         try:
             url += str(request.GET.get("hub.challenge"))
