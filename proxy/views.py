@@ -15,7 +15,7 @@ class WpCheck(APIView):
         url += "?hub.challenge="
         url += str(request.GET.get("hub.challenge"))
         r = requests.get(url)
-        return Response(r.json(), status=200)
+        return Response(data=int(r.content), status=r.status_code)
 
 
     def post(self, request):
